@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090406222015) do
+ActiveRecord::Schema.define(:version => 20090406224211) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "name"
+    t.text     "text"
+    t.integer  "ride_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rides", :force => true do |t|
     t.boolean  "offering"
