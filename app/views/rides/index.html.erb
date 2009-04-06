@@ -1,0 +1,26 @@
+<h1>Listing rides</h1>
+
+<table>
+  <tr>
+    <th>Offering</th>
+    <th>Location</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+
+<% for ride in @rides %>
+  <tr>
+    <td><%=h ride.offering %></td>
+    <td><%=h ride.location %></td>
+    <td><%=h ride.name %></td>
+    <td><%=h ride.email %></td>
+    <td><%= link_to 'Show', ride %></td>
+    <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
+    <td><%= link_to 'Destroy', ride, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ride', new_ride_path %>

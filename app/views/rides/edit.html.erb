@@ -1,0 +1,28 @@
+<h1>Editing ride</h1>
+
+<% form_for(@ride) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :offering %><br />
+    <%= f.check_box :offering %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ride %> |
+<%= link_to 'Back', rides_path %>

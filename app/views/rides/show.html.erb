@@ -1,0 +1,23 @@
+<p>
+  <b>Offering:</b>
+  <%=h @ride.offering %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @ride.location %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @ride.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @ride.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Back', rides_path %>
