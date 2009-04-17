@@ -1,7 +1,8 @@
 class RidesController < ApplicationController
   # GET /rides
   def index
-    @rides = Ride.find(:all)
+    @offering_rides = Ride.find(:all, :conditions => { :offering => true } )
+    @requesting_rides = Ride.find(:all, :conditions => { :offering => false } )
 
     respond_to do |format|
       format.html # index.html.erb
@@ -68,4 +69,5 @@ class RidesController < ApplicationController
       format.html { redirect_to(rides_url) }
     end
   end
+
 end
