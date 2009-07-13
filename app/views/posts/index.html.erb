@@ -1,22 +1,24 @@
-<h1>Listing posts</h1>
+<h1>Posts</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Text</th>
-  </tr>
+<%=link_to_function "add new post", visual_effect(:toggle_appear, "new-form", :duration => 0.5)%>
+
+<div id="new-form" style="display: none;">
+  <% form_for(@post) do |f| %>
+    <%= f.error_messages %>
+    <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %><br /><br />
+    <%= f.label :text, "Message" %><br />
+    <%= f.text_area :text %><br />
+    <%= f.submit "Submit" %>
+    </p>
+  <% end %>
+</div>
 
 <% for post in @posts %>
-  <tr>
-    <td><%=h post.name %></td>
-    <td><%=h post.text %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class="post_div">
+  <h4><%=h post.name %></h4>
+  <p><em><%=h post.created_at %></em></p>
+  <p><%=h post.text %></p>
+</div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New post', new_post_path %>
