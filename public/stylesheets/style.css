@@ -47,8 +47,49 @@ a:hover { color: #fff; background-color:#000; }
   padding: 5px;
 }
 
+div#main_block {
+	width: 500px;
+}
+
+div.header {
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
+}
+
+div#intro {
+	width: 500px;
+	text-align: left;
+	direction: ltr;
+	font-variant: small-caps;
+}
+
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
 }
 
+div.post_div {
+	border-style: solid;
+	border-color: #686dfc;
+	background-color: #c1f2fe;
+	margin: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+div.post_div div.text {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+span.time_stamp {
+	font-style: italic;
+	font-variant: normal;
+	text-align: left;
+	text-decoration: none;
+	font-size: 9px;
+}
+
+span.name {
+	font-weight: bold;
+}

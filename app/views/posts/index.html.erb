@@ -1,24 +1,39 @@
 <h1>Posts</h1>
 
+<div id="intro">
+<p>If you have a ride you can offer, please post details including starting
+point, departure date, and how many seats are available.</p>
+<p>Otherwise, just leave a message on the board.</p>
+</div>
+
 <%=link_to_function "add new post", visual_effect(:toggle_appear, "new-form", :duration => 0.5)%>
 
 <div id="new-form" style="display: none;">
   <% form_for(@post) do |f| %>
     <%= f.error_messages %>
+
     <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %><br /><br />
-    <%= f.label :text, "Message" %><br />
-    <%= f.text_area :text %><br />
-    <%= f.submit "Submit" %>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :text, "Message" %><br />
+      <%= f.text_area :text %>
+    </p>
+    <p>
+      <%= f.submit "Submit" %>
     </p>
   <% end %>
 </div>
 
+<div id="main_block">
 <% for post in @posts %>
 <div class="post_div">
-  <h4><%=h post.name %></h4>
-  <p><em><%=h post.created_at %></em></p>
-  <p><%=h post.text %></p>
+  <div class="header">
+    <span class="name"><%=h post.name %></span> - 
+    <span class="time_stamp"><%=h post.created_at %></span>
+  </div>
+  <div class="text"><%=h post.text %></div>
 </div>
 <% end %>
+</div>
