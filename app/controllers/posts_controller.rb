@@ -11,15 +11,9 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = Post.new(params[:post])
-
     respond_to do |format|
-      if @post.save
-        flash[:notice] = 'Post was successfully created.'
-        format.html { redirect_to :action => "index" }
-      else
-        format.html { render :action => "new" }
-      end
+      flash[:notice] = 'New posts are disabled.'
+      format.html { redirect_to :action => "index" }
     end
   end
 
